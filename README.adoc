@@ -32,12 +32,15 @@
 // Make interactive checklist.
 [options="interactive"]
 .Cluster configuration
-* [x] Deploy logging component
-* [x] Creating infrastructure machine sets
-* [x] Creating infrastructure Nodes
-* [ ] Disable workload from running on infra nodes by applying taints on infra nodes.
-* [ ] Move Infra components to Infra nodes
-
+** [x] Deploy logging component
+** [x] Creating infrastructure machine sets
+** [x] Creating infrastructure Nodes
+** [ ] Disable workload from running on infra nodes by applying taints on infra nodes.
+** [ ] Move Infra components to Infra nodes
+*** [ ] The default router
+*** [ ] The container image registry
+*** [ ] The cluster metrics collection (elasticsearch, kibana, curator, fluentd)
+*** [ ] Cluster aggregated logging
 * [ ] Deploy Cluster Autoscaler
 * [ ] Deploy Machine Autoscaler
 * [ ] Enabling etcd encryption
