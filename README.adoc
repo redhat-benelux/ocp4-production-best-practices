@@ -1,0 +1,53 @@
+:source-highlighter: highlightjs
+:data-uri:
+:toc: left
+:markup-in-source: +verbatim,+quotes,+specialcharacters
+:icons: font
+:stylesdir: stylesheets
+:stylesheet: colony.css
+
+= OCP production best practices
+
+.*Goals*
+
+. Define a standard checklist to be followed for Production ready OCP 4
+
+.*References:*
+** https://learnk8s.io/production-best-practices[]
+** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/cluster-tasks.html[]
+** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/node-tasks.html[]
+
+
+
+
+** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/machine-configuration-tasks.html[]
+
+
+.*Background:*
+
+:sectnums:
+
+== Cluster configuration
+
+// Make interactive checklist.
+[options="interactive"]
+.Cluster configuration
+* [ ] Deploy logging component
+* [ ] Creating infrastructure machine sets
+* [ ] Creating infrastructure Nodes
+* [ ] Disable workload from running on infra nodes by applying taints on infra nodes.
+* [ ] Move Infra components to Infra nodes
+** [ ] The default router
+** [ ] The container image registry
+** [ ] The cluster metrics collection (elasticsearch, kibana, curator, fluentd)
+** [ ] Cluster aggregated logging
+* [ ] Deploy Cluster Autoscaler
+* [ ] Deploy Machine Autoscaler
+* [ ] Enabling etcd encryption
+* [ ] Defragmenting etcd every month
+Resource requests and overcommitment https://docs.openshift.com/container-platform/4.6/post_installation_configuration/node-tasks.html#nodes-cluster-resource-override_post-install-node-tasks
+* [ ] Enable network policies to restrict communication between namespaces
+
+== Node configuration
+* [ ] Deploy machine health checks
+* [ ] Creating a KubeletConfig CRD to configure the Pods per Node (podsPerCore and maxPods)
