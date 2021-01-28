@@ -13,14 +13,17 @@
 . Define a standard checklist to be followed for Production ready OCP 4
 
 .*References:*
-K8s
+* K8s
+
 ** https://learnk8s.io/production-best-practices[]
 
-OpenShift
+* OpenShift
+
 ** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/cluster-tasks.html[]
 ** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/node-tasks.html[]
 
-Etcd
+* Etcd
+
 ** https://docs.google.com/document/d/1yPpakMC1OSOWeeM4m_bHDuLECLPXrpq5ow2C9HEcs1A/edit#heading=h.cv1evtd7ynmr[]
 ** https://github.com/etcd-io/etcd/blob/master/Documentation/faq.md#what-does-the-etcd-warning-failed-to-send-out-heartbeat-on-time-mean[]
 
