@@ -13,24 +13,29 @@
 . Define a standard checklist to be followed for Production ready OCP 4
 
 .*References:*
+K8s
 ** https://learnk8s.io/production-best-practices[]
+
+OpenShift
 ** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/cluster-tasks.html[]
 ** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/node-tasks.html[]
 
-
+Etcd
+** https://docs.google.com/document/d/1yPpakMC1OSOWeeM4m_bHDuLECLPXrpq5ow2C9HEcs1A/edit#heading=h.cv1evtd7ynmr[]
+** https://github.com/etcd-io/etcd/blob/master/Documentation/faq.md#what-does-the-etcd-warning-failed-to-send-out-heartbeat-on-time-mean[]
 
 
 ** https://docs.openshift.com/container-platform/4.6/post_installation_configuration/machine-configuration-tasks.html[]
 
 
 .*Background:*
-
+This post is an effort to create a list of opinionated checklist for a production ready OCP 4 cluster.
 :sectnums:
 
 == Cluster configuration
-* [x] Deploy logging component
-* [x] Creating infrastructure machine sets
-* [x] Creating infrastructure Nodes
+* [ ] Deploy logging component
+* [ ] Creating infrastructure machine sets
+* [ ] Creating infrastructure Nodes
 * [ ] Disable workload from running on infra nodes by applying taints on infra nodes.
 * [ ] Move Infra components to Infra nodes
 ** [ ] The default router
@@ -39,10 +44,16 @@
 ** [ ] Cluster aggregated logging
 * [ ] Deploy Cluster Autoscaler
 * [ ] Deploy Machine Autoscaler
-* [ ] Enabling etcd encryption
-* [ ] Defragmenting etcd every month
+
+
 Resource requests and overcommitment https://docs.openshift.com/container-platform/4.6/post_installation_configuration/node-tasks.html#nodes-cluster-resource-override_post-install-node-tasks
 * [ ] Enable network policies to restrict communication between namespaces
+
+== Etcd configuration
+* [ ] Enabling etcd encryption
+* [ ] Etcd disk performance (etcd_disk_wal_fsync_duration_seconds_bucket metric, 99th percentile should complete in under 10ms for storage to be considered fast enough)
+TOBE ADDED to Detail: histogram_quantile(0.99, irate(etcd_disk_wal_fsync_duration_seconds_bucket[5m]))
+* [ ] Defragmenting etcd every month
 
 == Node configuration
 * [ ] Deploy machine health checks
