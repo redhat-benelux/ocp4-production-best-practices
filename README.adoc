@@ -33,6 +33,7 @@
 
 .*Background:*
 This post is an effort to create a list of opinionated checklist for a production ready OCP 4 cluster.
+
 :sectnums:
 
 == Cluster configuration
