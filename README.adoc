@@ -32,7 +32,7 @@
 // Make interactive checklist.
 [options="interactive"]
 .Cluster configuration
-* [ ] Deploy logging component
+[ ] Deploy logging component
 * [ ] Creating infrastructure machine sets
 * [ ] Creating infrastructure Nodes
 * [ ] Disable workload from running on infra nodes by applying taints on infra nodes.
