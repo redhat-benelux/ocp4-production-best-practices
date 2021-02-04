@@ -62,3 +62,6 @@ TOBE ADDED to Detail: histogram_quantile(0.99, irate(etcd_disk_wal_fsync_duratio
 == Node configuration
 * [ ] Deploy machine health checks
 * [ ] Creating a KubeletConfig CRD to configure the Pods per Node (podsPerCore and maxPods)
+
+tip: when workers during initial install not activated, check the 'oc get csr' output on Pending.
+
